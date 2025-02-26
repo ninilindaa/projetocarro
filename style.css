@@ -1,0 +1,51 @@
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  #carro{
+    width: 400px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+  
+    /* Adicionando as cores */
+    background-color: #ff44b1;  /* Cor de fundo */
+    color: rgb(255, 255, 255);            /* Cor do texto */
+    border: none;             /* Remove a borda padrão */
+    border-radius: 5px;       /* Arredonda os cantos */
+  }
+  
+  button:hover {
+    background-color: #3e8e41;  /* Cor de fundo quando o mouse passa por cima */
+  }
+  #mudarCor {
+    background-color: #800080; /* Roxo */
+    color: rgb(255, 62, 62);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #mudarCor:hover {
+    background-color: #6a0dad; /* Roxo mais escuro ao passar o mouse */
+  }
+
+  .carro-ligado {
+    /* Adicione aqui os estilos que você quer aplicar quando o carro estiver ligado. */
+    /* Por exemplo: */
+    filter: brightness(1.2); /* Aumenta o brilho da imagem */
+  }
