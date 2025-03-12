@@ -1,65 +1,73 @@
 
-// Definindo a classe Carro
-class Carro {
-    constructor(modelo, cor) {
-      this.modelo = modelo;
-      this.cor = cor;
-      this.velocidade = 0; // Novo atributo: velocidade
-      this.ligado = false;
-    }
-  
-    ligar() {
-      this.ligado = true;
-      console.log("Carro ligado!");
-    }
-  
-    desligar() {
-      this.ligado = false;
-      console.log("Carro desligado!");
-      this.velocidade = 0; // Reseta a velocidade ao desligar
-      atualizarVelocidadeNaTela(); // Atualiza a velocidade na tela
-    }
-  
-    acelerar(incremento) {
-      if (this.ligado) {
-        this.velocidade += incremento;
-        console.log("Acelerando! Velocidade: " + this.velocidade + " km/h");
-        atualizarVelocidadeNaTela(); // Atualiza a velocidade na tela
-      } else {
-        alert("O carro precisa estar ligado para acelerar!");
-      }
-    }
-  }
-  
-  // Criando um objeto Carro
-  const meuCarro = new Carro("Fusca", "Azul");
-  
-  // Exibindo as informações do carro na tela
-  document.getElementById("modelo").textContent = meuCarro.modelo;
-  document.getElementById("cor").textContent = meuCarro.cor;
-  
-  // Funções para atualizar a interface
-  function atualizarVelocidadeNaTela() {
-    document.getElementById("velocidade").textContent = meuCarro.velocidade;
-  }
-  
-  // Adicionando os eventos aos botões
-  document.getElementById("ligar").addEventListener("click", function() {
-    meuCarro.ligar();
-  });
-  
-  document.getElementById("desligar").addEventListener("click", function() {
-    meuCarro.desligar();
-  });
-  
-  document.getElementById("acelerar").addEventListener("click", function() {
-    meuCarro.acelerar(10); // Acelera em 10 km/h a cada clique
-  });
-  
+// Seleciona os elementos da página
+const modelo = document.getElementById('modelo');
+const cor = document.getElementById('cor');
+const velocidade = document.getElementById('velocidade');
+const carro = document.getElementById('carro');
+const ligar = document.getElementById('ligar');
+const desligar = document.getElementById('desligar');
+const acelerar = document.getElementById('acelerar');
 
+// Informações do carro
+let carroLigado = false;
+let velocidadeAtual = 0;
+let modeloCarro = "McQueen";
+let corCarro = "Vermelho";
 
+// Atribuindo valores ao modelo e cor do carro
+modelo.textContent = modeloCarro;
+cor.textContent = corCarro;
 
+// Função para ligar o carro
+ligar.addEventListener('click', () => {
+    if (!carroLigado) {
+        carroLigado = true;
+        velocidadeAtual = 0; // O carro começa parado ao ligar
+        atualizarVelocidade();
+        alert("O carro foi ligado!");
+    } else {
+        alert("O carro já está ligado!");
+    }
+});
 
+// Função para desligar o carro
+desligar.addEventListener('click', () => {
+    if (carroLigado) {
+        carroLigado = false;
+        velocidadeAtual = 0;
+        atualizarVelocidade();
+        carro.style.transform = "translateX(0px)"; // Reseta a posição do carro
+        alert("O carro foi desligado!");
+    } else {
+        alert("O carro já está desligado!");
+    }
+});
+
+// Função para acelerar o carro
+acelerar.addEventListener('click', () => {
+    if (carroLigado) {
+        velocidadeAtual += 10; // Acelera 10 km/h a cada clique
+        if (velocidadeAtual > 200) {
+            velocidadeAtual = 200; // Limite máximo de velocidade
+        }
+        atualizarVelocidade();
+        moverCarro(); // Move o carro conforme a velocidade
+    } else {
+        alert("Ligue o carro antes de acelerar!");
+    }
+});
+
+// Função para atualizar a velocidade exibida
+function atualizarVelocidade() {
+    velocidade.textContent = velocidadeAtual;
+}
+
+// Função para mover o carro na tela
+function moverCarro() {
+    // A distância que o carro deve se mover é baseada na velocidade
+    let distancia = velocidadeAtual * 2; // O multiplicador 2 controla a rapidez do movimento
+    carro.style.transform = `translateX(${distancia}px)`; // Move o carro para a direita
+}
 
 
 

@@ -49,3 +49,33 @@ body {
     /* Por exemplo: */
     filter: brightness(1.2); /* Aumenta o brilho da imagem */
   }
+
+
+  #carro {
+    width: 300px;
+    height: auto;
+    position: relative;
+    transition: transform 0.5s ease-in-out; /* Para animar o movimento */
+}
+
+@keyframes moveCaminhao {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(300px); }
+}
+
+.moving {
+  animation: moveCaminhao 5s linear infinite;
+}
+
+/* Adicionando vibração no caminhão ao ligar o motor */
+@keyframes vibrar {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(10px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+.vibrando {
+  animation: vibrar 0.2s ease-in-out infinite;
+}
