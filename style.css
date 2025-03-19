@@ -29,7 +29,7 @@ body {
   }
   
   button:hover {
-    background-color: #3e8e41;  /* Cor de fundo quando o mouse passa por cima */
+    background-color: #9900ff;  /* Cor de fundo quando o mouse passa por cima */
   }
   #mudarCor {
     background-color: #800080; /* Roxo */
@@ -39,7 +39,13 @@ body {
     border-radius: 5px;
     cursor: pointer;
   }
-  
+  .borda {
+    border: 2px solid rgb(255, 0, 221); /* Define a borda */
+    padding: 5px; /* Adiciona um espaço entre o texto e a borda */
+    border-radius: 5px; /* Borda arredondada */
+}
+
+
   #mudarCor:hover {
     background-color: #6a0dad; /* Roxo mais escuro ao passar o mouse */
   }
@@ -58,24 +64,135 @@ body {
     transition: transform 0.5s ease-in-out; /* Para animar o movimento */
 }
 
-@keyframes moveCaminhao {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(300px); }
+
+
+
+
+
+
+
+
+body {
+  font-family: sans-serif;
+  text-align: center;
 }
 
-.moving {
-  animation: moveCaminhao 5s linear infinite;
+#carro{
+  width: 400px;
+  margin-bottom: 20px;
 }
 
-/* Adicionando vibração no caminhão ao ligar o motor */
-@keyframes vibrar {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(10px); }
-  50% { transform: translateX(0); }
-  75% { transform: translateX(-10px); }
-  100% { transform: translateX(0); }
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+
+  /* Adicionando as cores */
+  background-color: #ff44b1;  /* Cor de fundo */
+  color: rgb(255, 255, 255);            /* Cor do texto */
+  border: none;             /* Remove a borda padrão */
+  border-radius: 5px;       /* Arredonda os cantos */
 }
 
-.vibrando {
-  animation: vibrar 0.2s ease-in-out infinite;
+button:hover {
+  background-color: #3e8e41;  /* Cor de fundo quando o mouse passa por cima */
 }
+#mudarCor {
+  background-color: #800080; /* Roxo */
+  color: rgb(255, 62, 62);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#mudarCor:hover {
+  background-color: #6a0dad; /* Roxo mais escuro ao passar o mouse */
+}
+
+.caminhao-ligado {
+  /* Adicione aqui os estilos que você quer aplicar quando o carro estiver ligado. */
+  /* Por exemplo: */
+  filter: brightness(1.2); /* Aumenta o brilho da imagem */
+}
+
+
+#caminhao {
+  width: 300px;
+  height: auto;
+  position: relative;
+  transition: transform 0.5s ease-in-out; /* Para animar o movimento */
+}
+
+vvvvvvvvvvv
+
+
+
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#carro{
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+
+  /* Adicionando as cores */
+  background-color: #ff0d9a;  /* Cor de fundo */
+  color: rgb(255, 255, 255);            /* Cor do texto */
+  border: none;             /* Remove a borda padrão */
+  border-radius: 5px;       /* Arredonda os cantos */
+}
+
+button:hover {
+  background-color: #ae00ff;  /* Cor de fundo quando o mouse passa por cima */
+}
+#mudarCor {
+  background-color: #800080; /* Roxo */
+  color: rgb(255, 62, 62);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#mudarCor:hover {
+  background-color: #6a0dad; /* Roxo mais escuro ao passar o mouse */
+}
+
+.esportivo-ligado {
+  /* Adicione aqui os estilos que você quer aplicar quando o carro estiver ligado. */
+  /* Por exemplo: */
+  filter: brightness(1.2); /* Aumenta o brilho da imagem */
+}
+
+
+#esportivo {
+  width: 300px;
+  height: auto;
+  position: relative;
+  transition: transform 0.5s ease-in-out; /* Para animar o movimento */
+}
+
+
